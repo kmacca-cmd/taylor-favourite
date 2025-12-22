@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+
+<p>
+  <a href="index.html">🎵 Song Picker</a> | 
+  <a href="albums.html">💿 Album Picker</a>
+</p>
+
 <head>
   <title>Favourite Taylor Swift Album</title>
   <link rel="stylesheet" href="style.css">
