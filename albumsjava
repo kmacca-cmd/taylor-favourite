@@ -1,3 +1,8 @@
+<p>
+  <a href="index.html">🎵 Song Picker</a> | 
+  <a href="albums.html">💿 Album Picker</a>
+</p>
+
 let albums = [
   "Taylor Swift",
   "Fearless",
