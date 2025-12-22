@@ -2,24 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Taylor Swift Song Picker</title>
+  <title>Taylor Swift Favourite Picker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>💖 Pick Your Favourite Taylor Swift Song</h1>
-<p>Choose the song you love more. One will survive.</p>
+<h1>🎵 Build Your Taylor Swift List</h1>
+<p>Add 10–60 songs you love. Then battle them head-to-head.</p>
 
-<div id="game">
-  <button id="song1" onclick="pick(0)"></button>
-  <button id="song2" onclick="pick(1)"></button>
-</div>
+<textarea id="songInput" placeholder="One song per line..."></textarea>
 
-<div id="result" style="display:none;">
-  <h2>Your favourite Taylor Swift song is:</h2>
-  <h1 id="winner"></h1>
-</div>
+<button onclick="startGame()">Start Song Battle</button>
 
-<script src="script.js"></script>
+<p>
+  <a href="albums.html">💿 Or pick your favourite album</a>
+</p>
+
+<script>
+function startGame() {
+  const songs = document.getElementById("songInput").value
+    .split("\n")
+    .map(s => s.trim())
+    .filter(s => s !== "");
+
+  if (songs.length < 5) {
+    alert("Please enter at least 5 songs!");
+    return;
+  }
+
+  localStorage.setItem("songs", JSON.stringify(songs));
+  window.location.href = "picker.html";
+}
+</script>
+
 </body>
 </html>
