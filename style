@@ -28,3 +28,10 @@ button {
 button:hover {
   background-color: #f4a6c1;
 }
+.Red { background-color: #b22222; color: white; }
+.Folklore { background-color: #4f6f52; color: white; }
+._1989 { background-color: #4fa3d1; color: white; }
+.Lover { background-color: #f7a8c9; }
+.Reputation { background-color: #333; color: white; }
+.SpeakNow { background-color: #7d5ba6; color: white; }
+.Fearless { background-color: #e6c87c; }
