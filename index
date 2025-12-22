@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Taylor Swift Song Picker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>💖 Pick Your Favourite Taylor Swift Song</h1>
+<p>Choose the song you love more. One will survive.</p>
+
+<div id="game">
+  <button id="song1" onclick="pick(0)"></button>
+  <button id="song2" onclick="pick(1)"></button>
+</div>
+
+<div id="result" style="display:none;">
+  <h2>Your favourite Taylor Swift song is:</h2>
+  <h1 id="winner"></h1>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
