@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Favourite Taylor Swift Album</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>💿 Pick Your Favourite Taylor Swift Album</h1>
+
+<div id="game">
+  <button id="album1" onclick="pickAlbum(0)"></button>
+  <button id="album2" onclick="pickAlbum(1)"></button>
+</div>
+
+<div id="result" style="display:none;">
+  <h2>Your favourite album is:</h2>
+  <h1 id="winner"></h1>
+  <button onclick="restart()">Try Again</button>
+</div>
+
+<script src="albums.js"></script>
+</body>
+</html>
