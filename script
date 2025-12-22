@@ -35,3 +35,6 @@ function pick(choice) {
 }
 
 nextRound();
+function restart() {
+  location.reload();
+}
