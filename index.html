@@ -7,11 +7,182 @@
 </head>
 <body>
 
-<h1>🎵 Build Your Taylor Swift List</h1>
-<p>Add 10–60 songs you love. Then battle them head-to-head.</p>
+<h1>🎵 Pick Your Favourite Songs</h1>
+<p>Select at least 5 songs from Taylor's discography:</p>
 
-<textarea id="songInput" placeholder="One song per line..."></textarea>
+<select id="songSelect" multiple size="15">
+  <!-- Debut -->
+  <option>Tim McGraw</option>
+  <option>Picture to Burn</option>
+  <option>Teardrops on My Guitar</option>
+  <option>A Place in This World</option>
+  <option>Cold as You</option>
+  <option>The Outside</option>
+  <option>Tied Together with a Smile</option>
+  <option>Stay Beautiful</option>
+  <option>Should’ve Said No</option>
+  <option>Mary’s Song (Oh My My My)</option>
+  <option>Our Song</option>
 
+  <!-- Fearless -->
+  <option>Fearless</option>
+  <option>Love Story</option>
+  <option>You Belong with Me</option>
+  <option>Fifteen</option>
+  <option>White Horse</option>
+  <option>The Best Day</option>
+  <option>Forever & Always</option>
+
+  <!-- Speak Now -->
+  <option>Mine</option>
+  <option>Sparks Fly</option>
+  <option>Back to December</option>
+  <option>Enchanted</option>
+  <option>Mean</option>
+  <option>Haunted</option>
+  <option>The Story of Us</option>
+  <option>Dear John</option>
+
+
+
+  <!-- Red -->
+  <option>State of Grace</option>
+  <option>Red</option>
+  <option>22</option>
+  <option>I Knew You Were Trouble</option>
+  <option>All Too Well</option>
+  <option>We Are Never Ever Getting Back Together</option>
+  <option>Begin Again</option>
+  <option>Treacherous</option>
+  <option>Holy Ground</option>
+  <option>10 min version</option>
+  <option>Nothing New</option>
+  <option>The Last Time</option>
+
+
+
+
+
+
+  <!-- 1989 -->
+  <option>Welcome to New York</option>
+  <option>Blank Space</option>
+  <option>Style</option>
+  <option>Out of the Woods</option>
+  <option>Shake It Off</option>
+  <option>Wildest Dreams</option>
+  <option>Clean</option>
+  <option>New Romantics</option>
+  <option>Wonderland</option>
+  <option>I wish you would</option>
+
+
+
+
+  <!-- Reputation -->
+  <option>…Ready for It?</option>
+  <option>Delicate</option>
+  <option>Look What You Made Me Do</option>
+  <option>End Game</option>
+  <option>Don’t Blame Me</option>
+  <option>Call it what you want</option>
+  <option>Gorgeous</option>
+  <option>Getaway Car</option>
+
+
+
+
+  <!-- Lover -->
+  <option>Lover</option>
+  <option>The Man</option>
+  <option>Cruel Summer</option>
+  <option>False God</option>
+  <option>Death by a Thousand Cuts</option>
+  <option>The Archer</option>
+  <option>Cornelia Street</option>
+
+
+
+  <!-- Folklore -->
+  <option>Cardigan</option>
+  <option>The 1</option>
+  <option>Exile</option>
+  <option>August</option>
+  <option>Betty</option>
+  <option>Seven</option>
+  <option>Mirrorball</option>
+  <option>The Lakes</option>
+  <option>My Tears Ricochet</option>
+  <option>Hoax</option>
+
+
+
+
+
+
+  <!-- Evermore -->
+  <option>Willow</option>
+  <option>Tolerate It</option>
+  <option>No Body, No Crime</option>
+  <option>Marjorie</option>
+  <option>Ivy</option>
+  <option>Cowboy Like Me</option>
+  <option>Right Where you left me</option>
+  <option>Coney Island</option>
+
+
+
+
+
+  <!-- Midnights -->
+  <option>Anti-Hero</option>
+  <option>Lavender Haze</option>
+  <option>Snow on the Beach</option>
+  <option>Karma</option>
+  <option>Mastermind</option>
+  <option>Dear Reader</option>
+  <option>You're Losing Me</option>
+  <option>Maroon</option>
+  <option>You're On Your Own, Kid</option>
+  <option>Question?</option>
+
+
+
+
+
+
+  <!-- TTPD -->
+  <option>Fortnight</option>
+  <option>loml</option>
+  <option>Who’s Afraid of Little Old Me?</option>
+  <option>The Tortured Poets Department</option>
+  <option>Peter</option>
+  <option>Fresh Out The Slammer</option>
+  <option>Guilty as Sin?</option>
+  <option>Down Bad</option>
+  <option>But Daddy I Love Him</option>
+  <option>How did it end?</option>
+
+
+
+
+
+
+
+  <!-- Life of a Showgirl -->
+  <option>The Fate of Ophelia</option>
+  <option>Elizabeth Taylor</option>
+  <option>Opalite</option>
+  <option>Ruin the Friendship</option>
+  <option>The Life of a Showgirl</option>
+  <option>Honey</option>
+  <option>Father Figure</option>
+<option>Actually Romantic</option>
+
+
+</select>
+
+<br><br>
 <button onclick="startGame()">Start Song Battle</button>
 
 <p>
@@ -20,15 +191,21 @@
 
 <script>
 function startGame() {
-  const songs = document.getElementById("songInput").value
-    .split("\n")
-    .map(s => s.trim())
-    .filter(s => s !== "");
+  const select = document.getElementById("songSelect");
+  const selectedSongs = Array.from(select.selectedOptions).map(o => o.value);
 
-  if (songs.length < 5) {
-    alert("Please enter at least 5 songs!");
+  if (selectedSongs.length < 5) {
+    alert("Please select at least 5 songs!");
     return;
   }
+
+  localStorage.setItem("songs", JSON.stringify(selectedSongs));
+  window.location.href = "picker.html";
+}
+</script>
+
+</body>
+</html>
 
   localStorage.setItem("songs", JSON.stringify(songs));
   window.location.href = "picker.html";
